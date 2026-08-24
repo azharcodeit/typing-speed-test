@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Sora';
+  src: url('../assets/fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --color-neutral-900: hsl(0, 0%, 7%);
+  --color-neutral-800: hsl(0, 0%, 15%);
+  --color-neutral-500: hsl(240, 3%, 46%);
+  --color-neutral-400: hsl(240, 1%, 59%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-blue-600: hsl(214, 100%, 55%);
+  --color-blue-400: hsl(210, 100%, 65%);
+  --color-red-500: hsl(354, 63%, 57%);
+  --color-green-500: hsl(140, 63%, 57%);
+  --color-yellow-400: hsl(49, 85%, 70%);
+  --ff-sans: 'Sora', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-0);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.stats, .results, .settings, .difficulty-btns, .mode-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.stats{
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-neutral-400);
+}
+
+button {
+  font-family: var(--ff-sans);
+  font-size: 12px;
+  color: var(--color-neutral-0);
+  border: 0.5px solid var(--color-neutral-0);
+  background-color: var(--color-neutral-900);
+  border-radius: 2px;
+  padding: 4px 8px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.start-btn {
+  font-size: 16px;
+  background-color: var(--color-blue-600);
+  border-radius: 4px;
+  border: none;
+  padding: 8px 16px;
+}
+
+.selected {
+  color: var(--color-blue-400);
+  border: 0.5px solid var(--color-blue-400);
+}
+
+.test-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+  height: 50vh;
+}
+
+
+
+
+/* ==========================================================================
+   Tablet View (>= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+
+}
+
+/* ==========================================================================
+   Desktop View (>= 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+}

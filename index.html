@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+
   <title>Frontend Mentor | Typing Speed Test</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <header>
+    <h2>Typing Speed Test</h2>
+    <p>Personal best: <span id="personal-best">0</span> WPM</p>
+  </header>
 
-  Personal best: <!-- PB --> WPM
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Time: <!-- Time -->
+  <div class="stats">
+    <div class="results">
+      <div>WPM: <span id="wpm-val">0</span></div>
+      <div>Accuracy: <span id="accuracy-val">100%</span></div>
+      <div>Time: <span id="time-val">0s</span></div>
+    </div>
+    <div class="settings">
+      <div class="difficulty-btns">
+        <p>Difficulty:</p>
+        <button class="difficulty-btn selected" id="easy">Easy</button>
+        <button class="difficulty-btn" id="medium">Medium</button>
+        <button class="difficulty-btn" id="hard">Hard</button>
+      </div>
+      <div class="mode-btns">
+        <p>Mode:</p>
+        <button class="mode-btn selected" id="timed">Timed</button>
+        <button class="mode-btn" id="passage">Passage</button>
+      </div>
+    </div>
 
-  Difficulty:
-  Easy
-  Medium
-  Hard
+  </div>
 
-  Mode:
-  Timed (60s)
-  Passage
-
-  <!-- Passage -->
-
-  Start Typing Test
-  Or click the text and start typing
+  <div class="test-container">
+    <div id="passage-display" class="passage-display"></div>
+    <button class="start-btn" id="start-btn">Start Typing Test</button>
+    <p>Or click the text and start typing</p>
+  </div>
 
   <!-- Test Complete Start -->
 
-  Test Complete!
+  <!-- Test Complete!
   Solid run. Keep pushing to beat your high score.
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Characters: <!-- Correct/Incorrect -->
+  WPM:
+  Accuracy:
+  Characters:
 
-  Go Again
-  
+  Go Again -->
+
   <!-- Test Complete End -->
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+  <script src="./js/script.js"></script>
 </body>
+
 </html>
