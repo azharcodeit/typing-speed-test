@@ -44,7 +44,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 50px;
+  padding: 0 24px 50px 24px;
 }
 
 .stats, .results, .settings, .difficulty-btns, .mode-btns {
@@ -54,10 +54,20 @@ header {
   gap: 10px;
 }
 
-.stats{
+.stats {
+  position: relative;
   justify-content: space-between;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-neutral-400);
+  padding: 0 24px 20px 24px;
+}
+
+.stats::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background-color: var(--color-neutral-400);
 }
 
 button {
@@ -86,17 +96,60 @@ button {
 }
 
 .test-container {
+  position: relative;
+  height: 50vh;
+  padding: 24px; /* Internal padding keeps text away from blur boundary */
+}
+
+.passage-display {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-neutral-400);
+  height: 100%;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbar while text is blurred */
+  user-select: none;
+}
+
+/* Clean overlay fitting exact bounds without negative margins or bleeding */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 7%, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.start-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding-top: 20px;
-  height: 50vh;
+  gap: 12px;
+  width: 100%;
+  text-align: center;
 }
 
+/* Active state during test run */
+.test-container.is-active .overlay,
+.test-container.is-active .start-container {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
-
+.test-container.is-active .passage-display {
+  color: var(--color-neutral-0);
+  overflow-y: auto; /* Enables scrolling only when active */
+  user-select: text;
+}
 
 /* ==========================================================================
    Tablet View (>= 768px)
