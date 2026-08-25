@@ -98,7 +98,7 @@ button {
 .test-container {
   position: relative;
   height: 50vh;
-  padding: 24px; /* Internal padding keeps text away from blur boundary */
+  padding: 24px;
 }
 
 .passage-display {
@@ -107,11 +107,10 @@ button {
   color: var(--color-neutral-400);
   height: 100%;
   padding: 0;
-  overflow: hidden; /* Prevents scrollbar while text is blurred */
+  overflow: hidden;
   user-select: none;
 }
 
-/* Clean overlay fitting exact bounds without negative margins or bleeding */
 .overlay {
   position: absolute;
   inset: 0;
@@ -147,7 +146,7 @@ button {
 
 .test-container.is-active .passage-display {
   color: var(--color-neutral-0);
-  overflow-y: auto; /* Enables scrolling only when active */
+  overflow-y: auto; 
   user-select: text;
 }
 
