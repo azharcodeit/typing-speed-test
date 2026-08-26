@@ -1,5 +1,6 @@
 const testContainer = document.querySelector(".test-container");
 const startBtn = document.getElementById("start-btn");
+const restartBtn = document.getElementById("restart-btn");
 const startContainer = document.querySelector(".start-container");
 const passageDisplay = document.getElementById("passage-display");
 
@@ -50,6 +51,10 @@ function startTypingTest(e) {
 }
 
 startContainer.addEventListener("click", startTypingTest);
+restartBtn.addEventListener("click", () => {
+    isTestRunning = false;
+    startTypingTest();
+});
 
 document.addEventListener("keydown", (e) => {
   if (!isTestRunning) {
