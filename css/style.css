@@ -162,9 +162,33 @@ button {
 }
 
 .restart-container {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 20px;
+}
+
+.test-container.is-active .restart-container {
+  display: flex;
+}
+
+.setting-dropdown {
+  display: none;
+}
+
+.select-input {
+  font-family: var(--ff-sans);
+  font-size: 13px;
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.select-input:focus {
+  outline: 1px solid var(--color-blue-400);
+  border-color: var(--color-blue-400);
 }
 
 /* ==========================================================================
@@ -177,6 +201,18 @@ button {
 
   .passage-display {
     font-size: 1.35rem; /* Slightly scales down font to maintain proportions */
+  }
+
+  .difficulty-btns,
+  .mode-btns {
+    display: none;
+  }
+
+  .setting-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
   }
 }
 

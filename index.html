@@ -26,6 +26,7 @@
       <div>Time: <span id="time-val">0s</span></div>
     </div>
     <div class="settings">
+      <!-- Desktop Button Groups -->
       <div class="difficulty-btns">
         <p>Difficulty:</p>
         <button class="difficulty-btn selected" id="easy">Easy</button>
@@ -37,19 +38,36 @@
         <button class="mode-btn selected" id="timed">Timed</button>
         <button class="mode-btn" id="passage">Passage</button>
       </div>
+
+      <!-- Tablet/Mobile Dropdowns -->
+      <div class="setting-dropdown" id="difficulty-dropdown">
+        <label for="difficulty-select">Difficulty:</label>
+        <select id="difficulty-select" class="select-input">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <div class="setting-dropdown" id="mode-dropdown">
+        <label for="mode-select">Mode:</label>
+        <select id="mode-select" class="select-input">
+          <option value="timed">Timed</option>
+          <option value="passage">Passage</option>
+        </select>
+      </div>
     </div>
 
   </div>
 
   <div class="test-container">
     <div class="overlay" id="overlay" aria-hidden="false"></div>
-    <div id="passage-display" class="passage-display">Lore ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+    <div id="passage-display" class="passage-display">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Lore ipsum dolor sit amet, consectetur adipiscing
       elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lore ipsum dolor sit amet, consectetur
       adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lore ipsum dolor sit amet,
       consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-    <div class="restart-container">
-      <button class="restart-btn" id="restart-btn" aria-hidden="true">Restart Test</button>
+    <div class="restart-container" id="restart-container" aria-hidden="true">
+      <button class="restart-btn" id="restart-btn">Restart Test</button>
     </div>
     <div class="start-container">
       <button class="start-btn" id="start-btn">Start Typing Test</button>

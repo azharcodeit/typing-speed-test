@@ -34,8 +34,9 @@ function startTypingTest(e) {
   // Prevent keydown/clicks from restarting an active test
   if (isTestRunning) return;
 
-  const difficulty =
-    document.querySelector(".difficulty-btns .selected")?.id || "easy";
+  const selectedBtn = document.querySelector(".difficulty-btns .selected")?.id;
+  const selectedDropdown = document.getElementById("difficulty-select")?.value;
+  const difficulty = selectedBtn || selectedDropdown || "easy";
 
   const difficultyPassages = passages[difficulty];
   if (!difficultyPassages || difficultyPassages.length === 0) return;
@@ -45,7 +46,9 @@ function startTypingTest(e) {
   passageDisplay.textContent = randomPassage.text;
 
   testContainer.classList.add("is-active");
+
   document.getElementById("overlay").setAttribute("aria-hidden", "true");
+  document.getElementById("restart-container").setAttribute("aria-hidden", "false");
 
   isTestRunning = true;
 }
@@ -57,6 +60,9 @@ restartBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
+  // Ignore system/modifier keys when starting the test
+  if (e.key === "Tab" || e.altKey || e.ctrlKey || e.metaKey) return;
+
   if (!isTestRunning) {
     startTypingTest(e);
   }
