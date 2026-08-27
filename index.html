@@ -14,16 +14,24 @@
 
 <body>
   <header>
-    <h2>Typing Speed Test</h2>
-    <p>Personal best: <span id="personal-best">0</span> WPM</p>
+    <img src="./assets/images/logo-large.svg" alt="Typing Speed Test Logo" class="logo-large">
+    <img src="./assets/images/logo-small.svg" alt="Typing Speed Test Logo" class="logo-small">
+    <div class="personal-best-container">
+      <img src="./assets/images/icon-personal-best.svg" alt="Personal Best Icon" class="personal-best-icon">
+      <span class="text-desktop">Personal best: </span>
+      <span class="text-mobile">Best: </span>
+      <span id="personal-best-score">92 WPM</span>
+    </div>
   </header>
 
 
   <div class="stats">
     <div class="results">
-      <div>WPM: <span id="wpm-val">0</span></div>
-      <div>Accuracy: <span id="accuracy-val">100%</span></div>
-      <div>Time: <span id="time-val">0s</span></div>
+      <div>WPM: <span id="wpm-val"> 0 </span></div>
+      <div class="divider" aria-hidden="true">|</div>
+      <div>Accuracy: <span id="accuracy-val"> 100% </span></div>
+      <div class="divider" aria-hidden="true">|</div>
+      <div>Time: <span id="time-val"> 0:60 </span></div>
     </div>
     <div class="settings">
       <!-- Desktop Button Groups -->
@@ -33,9 +41,10 @@
         <button class="difficulty-btn" id="medium">Medium</button>
         <button class="difficulty-btn" id="hard">Hard</button>
       </div>
+      <div class="settings-divider" aria-hidden="true">|</div>
       <div class="mode-btns">
         <p>Mode:</p>
-        <button class="mode-btn selected" id="timed">Timed</button>
+        <button class="mode-btn selected" id="timed">Timed(60s)</button>
         <button class="mode-btn" id="passage">Passage</button>
       </div>
 

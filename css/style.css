@@ -33,24 +33,49 @@
    ========================================================================== */
 body {
   font-family: var(--ff-sans);
-  font-size: 16px;
+  font-size: 20px;
   background-color: var(--color-neutral-900);
-  color: var(--color-neutral-0);
+  color: var(--color-neutral-400);
+  font-weight: 300;
   min-height: 100vh;
   width: 100%;
-  max-width: 960px;
+  max-width: 1215px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
-  overflow-x: hidden;
+  padding: 32px 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 32px;
+  padding-bottom: 62px;
+}
+
+.logo-large,
+.text-desktop {
+  display: inline-block;
+}
+
+.logo-small,
+.text-mobile {
+  display: none;
+}
+
+.personal-best-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 18px;
+}
+
+.personal-best-icon {
+  padding-right: 5px;
+}
+
+#personal-best-score {
+  color: var(--color-neutral-0);
 }
 
 .stats {
@@ -73,30 +98,58 @@ header {
   background-color: var(--color-neutral-400);
 }
 
-.results, .settings, .difficulty-btns, .mode-btns {
+.results,
+.settings,
+.difficulty-btns,
+.mode-btns {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+}
+
+.settings p {
+  font-size: 16px;
+  padding-right: 5px;
+}
+
+.results span {
+  color: var(--color-neutral-0);
+  font-weight: 500;
+  font-size: 24px;
 }
 
 button {
   font-family: var(--ff-sans);
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 300;
   color: var(--color-neutral-0);
   border: 0.5px solid var(--color-neutral-0);
   background-color: var(--color-neutral-900);
-  border-radius: 2px;
-  padding: 4px 8px;
+  border-radius: 8px;
+  padding: 6px 8px;
   cursor: pointer;
   width: fit-content;
 }
 
+.divider,
+.settings-divider {
+  color: var(--color-neutral-400);
+  padding: 0 12px;
+  font-weight: 200;
+}
+
+#wpm-val,
+#accuracy-val,
+#time-val {
+  padding-left: 5px;
+}
+
 .start-btn {
-  font-size: 16px;
+  font-size: 24px;
   background-color: var(--color-blue-600);
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
-  padding: 8px 16px;
+  padding: 12px 24px;
 }
 
 .selected {
@@ -112,12 +165,12 @@ button {
 }
 
 .passage-display {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   line-height: 1.8;
   color: var(--color-neutral-400);
   height: 100%;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--color-neutral-400);
+  border-bottom: 0.5px solid var(--color-neutral-400);
   overflow: hidden;
   user-select: none;
 }
@@ -142,7 +195,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
   text-align: center;
 }
@@ -177,12 +230,12 @@ button {
 
 .select-input {
   font-family: var(--ff-sans);
-  font-size: 13px;
+  font-size: 19.5px;
   color: var(--color-neutral-0);
   background-color: var(--color-neutral-800);
   border: 1px solid var(--color-neutral-400);
   border-radius: 4px;
-  padding: 6px 10px;
+  padding: 8px 12px;
   cursor: pointer;
 }
 
@@ -196,11 +249,24 @@ button {
    ========================================================================== */
 @media (max-width: 1024px) {
   body {
-    padding: 32px 24px; /* Adds side padding so content doesn't hit viewport edges */
+    font-size: 18px;
+    padding: 32px 24px;
   }
 
   .passage-display {
-    font-size: 1.35rem; /* Slightly scales down font to maintain proportions */
+    font-size: 1.5rem;
+  }
+
+  .personal-best-container {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .start-btn {
+    font-size: 18px;
   }
 
   .difficulty-btns,
@@ -212,7 +278,11 @@ button {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .settings-divider {
+    display: none;
   }
 }
 
@@ -221,27 +291,61 @@ button {
    ========================================================================== */
 @media (max-width: 768px) {
   body {
+    font-size: 16px;
     padding: 24px 16px;
+  }
+
+  .logo-large,
+  .text-desktop {
+    display: none;
+  }
+
+  .logo-small,
+  .text-mobile {
+    display: inline-block;
   }
 
   header {
     padding-bottom: 24px;
   }
 
-  /* Stack stats and settings vertically on phone screens */
   .stats {
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
   }
 
-  .results, .settings {
+  .results,
+  .settings {
     justify-content: space-between;
     width: 100%;
   }
 
-  .difficulty-btns, .mode-btns {
-    flex-wrap: wrap;
+  .results span {
+    font-size: 18px;
+  }
+
+  .divider {
+    padding: 0 4px;
+  }
+
+  .setting-dropdown {
+    font-size: 14px;
+  }
+
+  .select-input {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .start-btn {
+    font-size: 16px;
+    padding: 8px 16px;
   }
 
   .passage-display {
@@ -250,6 +354,6 @@ button {
   }
 
   .start-container {
-    width: 90%; /* Keeps start button overlay contained within phone width */
+    width: 90%;
   }
 }
