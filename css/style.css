@@ -133,9 +133,10 @@ button {
 
 .divider,
 .settings-divider {
-  color: var(--color-neutral-400);
-  padding: 0 12px;
-  font-weight: 200;
+  width: 0.5px;
+  align-self: stretch;
+  background-color: var(--color-neutral-400);
+  margin: 4px 16px;
 }
 
 #wpm-val,
@@ -326,7 +327,7 @@ button {
   }
 
   .divider {
-    padding: 0 4px;
+    margin: 0 4px;
   }
 
   .setting-dropdown {
