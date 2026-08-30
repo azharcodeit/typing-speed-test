@@ -119,6 +119,8 @@ header {
 }
 
 button {
+  display: flex;
+  align-items: center;
   font-family: var(--ff-sans);
   font-size: 16px;
   font-weight: 300;
@@ -146,11 +148,24 @@ button {
 }
 
 .start-btn {
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 500;
   background-color: var(--color-blue-600);
-  border-radius: 6px;
   border: none;
-  padding: 12px 24px;
+  padding: 15px 25px;
+}
+
+.restart-btn img{
+  margin-left: 8px;
+}
+
+.restart-btn {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-neutral-0);
+  border: none;
+  background-color: var(--color-neutral-800);
+  padding: 15px;
 }
 
 .selected {
@@ -166,8 +181,8 @@ button {
 }
 
 .passage-display {
-  font-size: 2.25rem;
-  line-height: 1.8;
+  font-size: 2.5rem;
+  line-height: 1.4;
   color: var(--color-neutral-400);
   height: 100%;
   padding-bottom: 24px;
@@ -178,7 +193,10 @@ button {
 
 .overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  right: -16px;
   background-color: hsla(0, 0%, 7%, 0.65);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -210,7 +228,6 @@ button {
 }
 
 .test-container.is-active .passage-display {
-  color: var(--color-neutral-0);
   overflow-y: auto;
   user-select: text;
 }
