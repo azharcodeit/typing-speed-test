@@ -162,7 +162,6 @@ button {
 .restart-btn {
   font-size: 20px;
   font-weight: 500;
-  color: var(--color-neutral-0);
   border: none;
   background-color: var(--color-neutral-800);
   padding: 15px;
@@ -302,6 +301,10 @@ button {
   .settings-divider {
     display: none;
   }
+
+  .results > div:not(.divider) {
+    border-right: 0.5px solid var(--color-neutral-400);
+  }
 }
 
 /* ==========================================================================
@@ -333,12 +336,6 @@ button {
     gap: 16px;
   }
 
-  .results,
-  .settings {
-    justify-content: space-between;
-    width: 100%;
-  }
-
   .results span {
     font-size: 18px;
   }
@@ -347,13 +344,54 @@ button {
     margin: 0 4px;
   }
 
+  .results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .results .divider {
+    display: none; 
+  }
+
+  .results > div:not(.divider) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 0.5px solid var(--color-neutral-400);
+  }
+
+  .results > div:not(.divider):last-child {
+    border-right: none;
+  }
+
+  .settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
   .setting-dropdown {
+    width: 100%;
     font-size: 14px;
   }
 
+  .setting-dropdown label {
+    display: none;
+  }
+
   .select-input {
+    width: 100%;
     font-size: 14px;
     padding: 6px 8px;
+    text-align: center;
+    text-align-last: center;
+  }
+
+  .select-input option {
+    text-align: center;
   }
 
   button {
