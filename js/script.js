@@ -3,6 +3,9 @@ const startBtn = document.getElementById("start-btn");
 const restartBtn = document.getElementById("restart-btn");
 const startContainer = document.querySelector(".start-container");
 const passageDisplay = document.getElementById("passage-display");
+const wpmVal = document.getElementById("wpm-val");
+const accuracyVal = document.getElementById("accuracy-val");
+const timeVal = document.getElementById("time-val");
 
 let passages = {};
 let isTestRunning = false;
@@ -30,6 +33,12 @@ function setupToggleButtons(selector) {
 setupToggleButtons(".difficulty-btn");
 setupToggleButtons(".mode-btn");
 
+function resetStats() {
+  if (wpmVal) wpmVal.textContent = "0";
+  if (accuracyVal) accuracyVal.textContent = "100%";
+  if (timeVal) timeVal.textContent = "0:60";
+}
+
 function startTypingTest(e) {
   // Prevent keydown/clicks from restarting an active test
   if (isTestRunning) return;
@@ -54,7 +63,9 @@ function startTypingTest(e) {
 }
 
 startContainer.addEventListener("click", startTypingTest);
+
 restartBtn.addEventListener("click", () => {
+    resetStats();
     isTestRunning = false;
     startTypingTest();
 });
